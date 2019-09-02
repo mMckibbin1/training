@@ -10,12 +10,13 @@ namespace InvestigationTask
     {
         public static string[] calculations;
         static Random rnd = new Random();
+        public static int NoCalculation = 6;
         
         static void Main(string[] args)
         {
-            calculations = new string[5];
+            calculations = new string[NoCalculation];
 
-            for(int i = 0; i < 5; i++)
+            for(int i = 0; i < NoCalculation; i++)
             {
                 int no1, no2, ans;
 
@@ -46,7 +47,7 @@ namespace InvestigationTask
             }
 
 
-            for (int i = 0; i < 5; i++)
+            for (int i = 0; i < NoCalculation; i++)
             {
                 string ans;
 
