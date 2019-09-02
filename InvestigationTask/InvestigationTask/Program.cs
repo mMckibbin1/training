@@ -10,39 +10,48 @@ namespace InvestigationTask
     {
         public static string[] calculations;
         static Random rnd = new Random();
-        public static int NoCalculation = 6;
-        
+        public static int NoCalculation = 10;
+
         static void Main(string[] args)
         {
             calculations = new string[NoCalculation];
 
-            for(int i = 0; i < NoCalculation; i++)
+            for (int i = 0; i < NoCalculation; i++)
             {
-                int no1, no2, ans;
+                int no1, no2, no3, ans;
 
                 no1 = Random;
 
                 no2 = Random;
 
-                if (no1 > 50)
-                {
-                    ans = no1 - no2;
+                no3 = Random;
 
-                    calculations[i] = no1.ToString() + "-" + no2.ToString() + "=" + ans.ToString();
+
+                if (no1 > 100)
+                {
+                    ans = no1 + no2 + no3;
+
+                    calculations[i] = no1.ToString() + "+" + no2.ToString() + "+" + no3.ToString() + "=" + ans.ToString();
                 }
-                else if (no1 > 100)
+                else if (no1 > 50)
                 {
-                    ans = no1 + no2;
+                    ans = no1 - no2 - no3;
 
-                    calculations[i] = no1.ToString() + "+" + no2.ToString() + "=" + ans.ToString();
-                }                    
+                    calculations[i] = no1.ToString() + "-" + no2.ToString() + "-" + no3.ToString() + "=" + ans.ToString();
+                }
+                else if (no1 > 25)
+                {
+                    ans = no1 / no2 / no3;
+
+                    calculations[i] = no1.ToString() + "/" + no2.ToString() + "/" + no3.ToString() + "=" + ans.ToString();
+                }
                 else
                 {
-                    ans = no1 * no2;
+                    ans = no1 * no2 * no3;
 
-                    calculations[i] = no1.ToString() + "*" + no2.ToString() + "=" + ans.ToString();
+                    calculations[i] = no1.ToString() + "*" + no2.ToString() + "*" + no3.ToString() + "=" + ans.ToString();
                 }
-                   
+
                 Console.WriteLine(ans);
             }
 
@@ -66,7 +75,7 @@ namespace InvestigationTask
 
         public static int Random
         {
-            get { return rnd.Next(1, 201); }
+            get { return rnd.Next(100, 1000); }
         }
     }
 }
